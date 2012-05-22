@@ -64,6 +64,10 @@ def start_turn(db, game, actions):
 	while game.can_upgrade_generator() and game.turn:
 		generator_type = game.upgrade_generator()
 		print "Upgraded %s" % generator_type
+		# Random chance to win a generator when upgrading.
+		if random.randint(1, 10) == 5):
+			generator_type = game.purchase_generator()
+			print "Free %s" % generator_type
 
 	while game.can_purchase_pr() and game.turn:
 		game.purchase_pr()
